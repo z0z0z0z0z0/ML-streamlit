@@ -65,7 +65,7 @@ def perform_hierarchical_clustering(X, n_clusters):
     
     # Perform Agglomerative Clustering on the sampled data
     sampled_X = resample(X, n_samples=3316, random_state=42)  # Adjust the number of samples as needed
-    hc = AgglomerativeClustering(n_clusters=n_clusters, affinity='euclidean', linkage='ward')
+    hc = AgglomerativeClustering(n_clusters=n_clusters, linkage='ward')
     y_hc = hc.fit_predict(sampled_X)
     labels = y_hc
     
