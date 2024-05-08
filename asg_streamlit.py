@@ -79,7 +79,7 @@ def perform_hierarchical_clustering(X, n_clusters):
         centroids.append(centroid)
     centroids = np.array(centroids)
     
-    return sampled_X_array, centroids
+    return sampled_X_array['Cluster'], centroids
 
 
 # --------------------------------------------- Fuzzy C Mean clustering
