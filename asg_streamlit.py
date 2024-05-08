@@ -67,9 +67,7 @@ def perform_hierarchical_clustering(X, n_clusters):
     sampled_X = resample(X, n_samples=3316, random_state=42)  # Adjust the number of samples as needed
     hc = AgglomerativeClustering(n_clusters=n_clusters, linkage='ward')
     y_hc = hc.fit_predict(sampled_X)
-    sampled_X_array = sampled_X.to_numpy()
-    sampled_X_array['Cluster'] = y_hc
-    #labels = y_hc
+    labels = y_hc
     
     # Calculate centroids
     centroids = []
@@ -79,7 +77,7 @@ def perform_hierarchical_clustering(X, n_clusters):
         centroids.append(centroid)
     centroids = np.array(centroids)
     
-    return sampled_X_array['Cluster'], centroids
+    return labels, centroids
 
 
 # --------------------------------------------- Fuzzy C Mean clustering
